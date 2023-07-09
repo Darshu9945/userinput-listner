@@ -1,0 +1,68 @@
+.for_form{
+    width: 40%;
+    margin: 2rem auto ;
+    padding: 1rem 1.5rem;
+    background-color: rgb(102, 50, 170);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    overflow: hidden;
+}
+.forinput {
+    width: 100%;
+    color: white;
+    
+}
+.forinput label{
+    font-size: 1.3rem;
+}
+.forinput input{
+    width: 90%;
+    border-radius: 8px;
+    height: 2rem;
+    text-decoration: solid;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+}
+.forbutton{
+    float: right;
+    
+ 
+    
+}
+.forbutton button{
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    background-color: rgb(20, 20, 62);
+    color: aliceblue;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+    margin-top: 1rem;
+}
+.datadiv{
+    width: 40%;
+    margin: auto;
+    background-color: rgb(109, 193, 193);
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+   
+}
+.dataitem{
+    border: 2px solid rgb(68, 60, 60);
+    width: 80%;
+    margin: 1rem  auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+    padding: 0.5rem 1rem;
+    
+    
+    
+}
+.data{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    
+}

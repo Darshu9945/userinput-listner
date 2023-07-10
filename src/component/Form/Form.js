@@ -1,41 +1,40 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import './form.css'
 import Forinvalid from '../forerrors/Forinvalid'
 const Form = (props) => {
-  const [enteredname, setenterename] = useState('')
-  const [enteredage, setentereage] = useState('')
+  
   const [data, setdata] = useState([])
   const [isvalid, setisvalid] = useState(null)
-  const getname = (e) => {
-    setenterename(e.target.value)
-  }
-  const getage = (e) => {
-    setentereage(e.target.value)
-  }
+  const enteredname=useRef()
+  const enteredage=useRef()
+  const enteredcollegename=useRef()
+ 
   const getdata = (e) => {
     e.preventDefault()
-    
-
+ const  enteredage1=enteredage.current.value
+ const  enteredcollegename1=enteredcollegename.current.value
+ const enteredname1=enteredname.current.value
     const data = {
       id:Math.random().toString(),
-      name: enteredname,
-      age: enteredage
+      name: enteredname1,
+      age: enteredage1,
+      collegename:enteredcollegename1
     }
-    setenterename("")
-    setentereage('')
-    if (enteredname.trim().length == 0 || enteredage.trim().length == 0) {
+    if (enteredname1.trim().length == 0 || enteredage1.trim().length == 0) {
       setisvalid({
         title:"Please Enter a valid input(not a empty input)"
       })
       return;
     }
-    if (enteredage <= 0) {
+    if (enteredage1 <= 0) {
       setisvalid({
         title:"Please Enter a valid age"
       })
       return;
-      return;
     }
+    enteredage.current.value=''
+    enteredcollegename.current.value=''
+    enteredname.current.value=''
     setdata((prevdata) => {
       return [data, ...prevdata]
     })
@@ -50,9 +49,11 @@ setisvalid(null)
         <div className='for_form'>
           <div className='forinput'>
             <label>Name</label><br></br>
-            <input type="text" value={enteredname} onChange={getname} /><br></br>
+            <input type="text"  ref={enteredname} /><br></br>
             <label>Age</label><br></br>
-            <input type="number" value={enteredage} onChange={getage} />
+            <input type="number"  ref={enteredage} />
+            <label>College-name</label><br></br>
+            <input type="text"  ref={enteredcollegename}/>
           </div>
           <div className=' forbutton'>
             <button type='submit'>submit</button>
@@ -69,6 +70,9 @@ setisvalid(null)
               </div>
               <div>
                 {"(" + data.age + " years old"+")"} 
+              </div>
+              <div>
+               {"-"+data.collegename}
               </div>
             </div>
           </div>
